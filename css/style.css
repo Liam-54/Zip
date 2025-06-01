@@ -42,6 +42,60 @@ img {
     display: block;
 }
 
+/* Video Container */
+#video-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#video-container video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+/* Card Hover Effects */
+.card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+
+.card-body {
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.card:hover .card-body {
+    background-color: #f8f9fa;
+}
+
+.card:hover .text-primary {
+    color: #0d6efd !important;
+}
+
+.card-img-top {
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Make sure links don't show underline on hover */
+.text-decoration-none:hover {
+    text-decoration: none !important;
+}
+
 /* Buttons */
 button, .btn {
     cursor: pointer;
@@ -56,7 +110,7 @@ button:hover, .btn:hover {
     background: #0b5ed7;
 }
 
-/* ...existing code... */
+/* Gallery styles */
 #gallery img {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -66,4 +120,60 @@ button:hover, .btn:hover {
     transform: scale(1.07);
     box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
-/* ...existing code... */
+
+/* Card hover effects */
+.hover-shadow {
+    transition: all 0.3s ease-in-out;
+}
+
+.hover-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Image hover effects */
+.card-img-top {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.03);
+}
+
+/* Navigation */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Hero section */
+.hero-overlay {
+    position: relative;
+}
+
+.hero-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+/* Footer video overlay */
+.video-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    pointer-events: none;
+}
