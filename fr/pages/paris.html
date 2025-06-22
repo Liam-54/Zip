@@ -7,8 +7,21 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .card-img-top {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        .hover-shadow:hover {
+            box-shadow: 0 0 20px 4px rgba(0,0,0,0.2);
+            transition: box-shadow 0.3s;
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="../../fr/index.html">
@@ -27,7 +40,7 @@
                             Langue
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="../paris.html">Deutsch</a></li>
+                            <li><a class="dropdown-item" href="../../pages/paris.html">Deutsch</a></li>
                             <li><a class="dropdown-item" href="../../en/pages/paris.html">English</a></li>
                             <li><a class="dropdown-item active" href="paris.html"><i class="fas fa-check me-2"></i>Français</a></li>
                         </ul>
@@ -36,63 +49,79 @@
             </div>
         </div>
     </nav>
-
-    <div class="container mt-5 pt-5">
-        <h1 class="text-center mb-5">Galerie Photos - Paris</h1>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <img src="../../img/Französische Kulur/Eifelturm.JPG" class="card-img-top rounded-4 img-fluid hover-shadow" alt="Tour Eiffel" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src, this.alt)">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Tour Eiffel</h5>
-                        <p class="card-text text-center text-muted">Le symbole le plus emblématique de Paris, construit pour l'Exposition universelle de 1889.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <img src="../../img/Französische Kulur/Ralphlauren_pic.jpeg" class="card-img-top rounded-4 img-fluid hover-shadow" alt="Ralph Lauren" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src, this.alt)">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Ralph Lauren</h5>
-                        <p class="card-text text-center text-muted">Boutique de mode emblématique à Paris.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <img src="../../img/Französische Kulur/Kadedrale.jpeg" class="card-img-top rounded-4 img-fluid hover-shadow" alt="Cathédrale" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src, this.alt)">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Cathédrale</h5>
-                        <p class="card-text text-center text-muted">L'une des nombreuses cathédrales historiques de Paris.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Weitere Bilder nach Bedarf -->
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content bg-transparent border-0">
-                <div class="modal-body d-flex align-items-center justify-content-center p-0 position-relative">
-                    <img src="" id="modalImage" class="img-fluid rounded-4" alt="Image agrandie" style="max-height: 98vh; width: auto; object-fit: contain;">
-                    <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" style="top: 20px; right: 20px; z-index: 1050;"></button>
-                </div>
+    <!-- Hero Section -->
+    <header class="position-relative bg-dark text-white text-center vh-75" style="margin-top: 56px;">
+        <div class="position-absolute w-100 h-100" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../../img/Französische Kulur/IMG-20250611-WA0024.jpg') center/cover; z-index: 1;"></div>
+        <div class="container position-relative py-5 d-flex align-items-center min-vh-50" style="z-index: 2;">
+            <div class="w-100 py-5">
+                <h1 class="display-3 fw-bold mb-4 hero-text">Impressions de Paris</h1>
+                <p class="lead mb-4 fs-4">Découvrez les plus beaux endroits de la ville</p>
+                <a href="../../fr/index.html" class="btn btn-secondary btn-lg px-4">Retour à l'accueil</a>
             </div>
         </div>
-    </div>
-    <script>
-        function showImage(src, alt) {
-            document.getElementById('modalImage').src = src;
-            document.getElementById('modalImage').alt = alt;
-        }
-    </script>
-
+    </header>
+    <!-- Galerie -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Galerie de Paris</h2>
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../../img/Französische Kulur/Eifelturm.JPG" class="card-img-top img-fluid rounded hover-shadow" alt="Tour Eiffel" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src, this.alt)">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../../img/Französische Kulur/Kadedrale.jpeg" class="card-img-top img-fluid rounded hover-shadow" alt="Cathédrale" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src, this.alt)">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../../img/Französische Kulur/Kirche.jpeg" class="card-img-top img-fluid rounded hover-shadow" alt="Église" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src, this.alt)">
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../../img/Französische Kulur/IMG-20250611-WA0010.jpg" class="card-img-top img-fluid rounded hover-shadow" alt="Impression Paris 1" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src, this.alt)">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../../img/Französische Kulur/IMG-20250611-WA0012.jpg" class="card-img-top img-fluid rounded hover-shadow" alt="Impression Paris 2" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src, this.alt)">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../../img/Französische Kulur/IMG-20250611-WA0020.jpg" class="card-img-top img-fluid rounded hover-shadow" alt="Impression Paris 3" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src, this.alt)">
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../../img/Französische Kulur/IMG-20250611-WA0024.jpg" class="card-img-top img-fluid rounded hover-shadow" alt="Impression Paris 4" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src, this.alt)">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../../img/Französische Kulur/Ralphlauren_pic.jpeg" class="card-img-top img-fluid rounded hover-shadow" alt="Ralph Lauren" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src, this.alt)">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../../img/Französische Kulur/Skyline_2.jpeg" class="card-img-top img-fluid rounded hover-shadow" alt="Skyline" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src, this.alt)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="py-5"></div>
     <!-- Video Footer -->
     <footer class="video-footer">
         <video autoplay loop muted playsinline>
-            <source src="../../videos/Zugverbindungen.mp4" type="video/mp4">
+            <source src="../../videos/Train.mp4" type="video/mp4">
             <p>Votre navigateur ne prend pas en charge la lecture vidéo.</p>
         </video>
         <div class="footer-overlay text-white">
@@ -111,7 +140,23 @@
             </div>
         </div>
     </footer>
-
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body d-flex align-items-center justify-content-center p-0 position-relative">
+                    <img src="" id="modalImage" class="img-fluid rounded" alt="Image agrandie" style="max-height: 98vh; width: auto; object-fit: contain;">
+                    <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Fermer" style="top: 20px; right: 20px; z-index: 1050;"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showImage(src) {
+            document.getElementById('modalImage').src = src;
+        }
+    </script>
 </body>
 </html>
