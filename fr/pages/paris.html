@@ -40,19 +40,77 @@
     <div class="container mt-5 pt-5">
         <h1 class="text-center mb-5">Galerie Photos - Paris</h1>
         <div class="row g-4">
-            <!-- Photo Gallery -->
             <div class="col-md-4">
-                <div class="card">
-                    <img src="../../img/Eifelturm.JPG" class="card-img-top img-fluid rounded hover-shadow" alt="Tour Eiffel">
+                <div class="card h-100">
+                    <img src="../../img/Französische Kulur/Eifelturm.JPG" class="card-img-top rounded-4 img-fluid hover-shadow" alt="Tour Eiffel" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src, this.alt)">
                     <div class="card-body">
-                        <h5 class="card-title">Tour Eiffel</h5>
-                        <p class="card-text">Le symbole le plus emblématique de Paris, construit pour l'Exposition universelle de 1889.</p>
+                        <h5 class="card-title text-center">Tour Eiffel</h5>
+                        <p class="card-text text-center text-muted">Le symbole le plus emblématique de Paris, construit pour l'Exposition universelle de 1889.</p>
                     </div>
                 </div>
             </div>
-            <!-- Add more photos as needed -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="../../img/Französische Kulur/Ralphlauren_pic.jpeg" class="card-img-top rounded-4 img-fluid hover-shadow" alt="Ralph Lauren" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src, this.alt)">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Ralph Lauren</h5>
+                        <p class="card-text text-center text-muted">Boutique de mode emblématique à Paris.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="../../img/Französische Kulur/Kadedrale.jpeg" class="card-img-top rounded-4 img-fluid hover-shadow" alt="Cathédrale" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage(this.src, this.alt)">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Cathédrale</h5>
+                        <p class="card-text text-center text-muted">L'une des nombreuses cathédrales historiques de Paris.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Weitere Bilder nach Bedarf -->
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body d-flex align-items-center justify-content-center p-0 position-relative">
+                    <img src="" id="modalImage" class="img-fluid rounded-4" alt="Image agrandie" style="max-height: 98vh; width: auto; object-fit: contain;">
+                    <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" style="top: 20px; right: 20px; z-index: 1050;"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showImage(src, alt) {
+            document.getElementById('modalImage').src = src;
+            document.getElementById('modalImage').alt = alt;
+        }
+    </script>
+
+    <!-- Video Footer -->
+    <footer class="video-footer">
+        <video autoplay loop muted playsinline>
+            <source src="../../videos/Zugverbindungen.mp4" type="video/mp4">
+            <p>Votre navigateur ne prend pas en charge la lecture vidéo.</p>
+        </video>
+        <div class="footer-overlay text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Paris, France</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="mb-2">&copy; 2025 Guide de Paris</p>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" class="text-white text-decoration-none"><i class="fas fa-arrow-up me-2"></i>Retour en haut</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
